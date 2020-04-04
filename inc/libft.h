@@ -15,10 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# define BUFF_SIZE 4096
 
 void*			ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *nptr, size_t n);
 void*			ft_memcpy(void *dest, const void *src, size_t n);
+void*			ft_memalloc(size_t n);
 void*			ft_memccpy(void *dest, const void *src, int c, size_t n);
 void*			ft_memmove(void *dest, const void *src, size_t n);
 void*			ft_memchr(const void *s, int c, size_t n);
@@ -55,4 +58,5 @@ int				ft_putchar_fd(int c, int fd);
 ssize_t			ft_putstr_fd(char const *s, int fd);
 ssize_t			ft_putendl_fd(const char *s, int fd);
 ssize_t			ft_putnbr_fd(int n, int fd);
+char*			ft_getfile(int fd);
 #endif
