@@ -14,19 +14,20 @@
 
 char*		ft_itoa(int n)
 {
-	size_t	i;
+	int		i;
 	int		sign;
 	char	storage[12];
 
-	i = 12;
-	sign = (n >= 0 ? 1 : -1);
+	i = 10;
 	ft_bzero(storage, 12);
-	while (n != 0 || (i == 12 && n == 0))
+	sign = (n >= 0 ? 1 : -1);
+	while (n != 0 || (i == 10 && n == 0))
 	{
-		storage[--i] = n % 10 * sign + '0';
+		storage[i--] = n % 10 * sign + '0';
 		n /= 10;
 	}
 	if (sign != 1)
-		storage[--i] = '-';
-	return (ft_strdup(storage));
+		storage[i--] = '-';
+	i += 1;
+	return (ft_strdup(storage + i));
 }
