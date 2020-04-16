@@ -15,7 +15,6 @@
 char*		ft_itoa(int n)
 {
 	size_t	i;
-	char*	ret;
 	int		sign;
 	char	storage[12];
 
@@ -29,8 +28,5 @@ char*		ft_itoa(int n)
 	}
 	if (sign != 1)
 		storage[--i] = '-';
-	if ((ret = (char*)malloc(12 - i + 1)) == NULL)
-		return (NULL);
-	ft_bzero(ret, 12 - i + 1);
-	return (ft_memcpy(ret, storage + i, 12 - i));
+	return (ft_strdup(storage));
 }

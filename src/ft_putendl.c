@@ -18,7 +18,7 @@ ssize_t		ft_putendl(const char *s)
 
 	if ((ret = write(1, s, ft_strlen(s))) == -1)
 		return (-1);
-	if (ft_putchar_fd('\n', 1) == -1)
+	if (ft_putchar('\n') == -1)
 		return (-1);
 	return (ret);
 }
