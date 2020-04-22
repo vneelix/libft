@@ -1,9 +1,9 @@
 #include "libft.h"
 
-char*	ft_strndup(const char *s1, size_t n)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	char*	ret;
 	size_t	len;
+	char	*ret;
 
 	len = ft_strlen(s1);
 	len = (n > len ? len : n);

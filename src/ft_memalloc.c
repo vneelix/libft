@@ -1,8 +1,8 @@
 #include "libft.h"
 
-void*	ft_memalloc(size_t n)
+void	*ft_memalloc(size_t n)
 {
-	void*	ret;
+	void	*ret;
 
 	if ((ret = malloc(n)) == NULL)
 		return (NULL);

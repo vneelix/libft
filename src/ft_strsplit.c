@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int	extract_words(char** ret, const char* s, char c)
+static int	extract_words(char **ret, const char *s, char c)
 {
 	size_t	i;
-	char*	ptr;
+	char	*ptr;
 
 	i = 0;
 	while (*s != '\0')
@@ -37,11 +37,11 @@ static int	extract_words(char** ret, const char* s, char c)
 	return (0);
 }
 
-static char**	create_ret(const char* s, char c)
+static char	**create_ret(const char *s, char c)
 {
 	size_t	i;
-	char*	ptr;
-	char**	ret;
+	char	*ptr;
+	char	**ret;
 
 	i = 0;
 	while (*s != '\0')
@@ -60,9 +60,9 @@ static char**	create_ret(const char* s, char c)
 	return (ret);
 }
 
-char**		ft_strsplit(const char*	s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
-	char**	ret;
+	char	**ret;
 
 	if ((ret = create_ret(s, c)) == NULL)
 		return (NULL);

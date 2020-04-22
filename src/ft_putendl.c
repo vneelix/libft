@@ -20,5 +20,5 @@ ssize_t		ft_putendl(const char *s)
 		return (-1);
 	if (ft_putchar('\n') == -1)
 		return (-1);
-	return (ret);
+	return (ret + 1);
 }

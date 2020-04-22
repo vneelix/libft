@@ -14,13 +14,12 @@
 
 ssize_t		ft_putnbr(int n)
 {
-	char*	s;
+	char	*s;
 	ssize_t	ret;
 
 	if ((s = ft_itoa(n)) == NULL)
 		return (-1);
-	if ((ret = write(1, s, ft_strlen(s))) == -1)
-		return (-1);
+	ret = write(1, s, ft_strlen(s));
 	free(s);
-	return (ret);	
+	return (ret);
 }

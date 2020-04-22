@@ -14,9 +14,5 @@
 
 ssize_t		ft_putstr_fd(char const *s, int fd)
 {
-	ssize_t	ret;
-
-	if ((ret = write(fd, s, ft_strlen(s))) == -1)
-		return (-1);
-	return (ret);
+	return (write(fd, s, ft_strlen(s)));
 }

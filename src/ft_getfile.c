@@ -1,11 +1,11 @@
 #include "libft.h"
 
-char*	ft_getfile(int fd)
+char	*ft_getfile(int fd)
 {
-	ssize_t		i;
-	char*		ret;
-	char*		nptr;
-	char		buff[BUFF_SIZE + 1];
+	ssize_t	i;
+	char	*ret;
+	char	*nptr;
+	char	buff[BUFF_SIZE + 1];
 
 	ft_bzero(buff, BUFF_SIZE + 1);
 	if ((ret = (char*)(ft_memalloc(1))) == NULL)
