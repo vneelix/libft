@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vneelix <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 20:54:54 by vneelix           #+#    #+#             */
-/*   Updated: 2019/09/08 21:45:38 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/25 04:28:32 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ssize_t		ft_putendl_fd(const char *s, int fd)
 {
 	ssize_t	ret;
 
-	if ((ret = write(fd, s, ft_strlen(s))) == -1)
+	if ((ret = ft_putstr_fd(s, fd)) == -1)
 		return (-1);
 	if (ft_putchar_fd('\n', fd) == -1)
 		return (-1);

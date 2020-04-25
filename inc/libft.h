@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 17:50:40 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/23 20:31:23 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/25 04:33:42 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+void			ft_memdel(void *mem);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
 char			*ft_strndup(const char *s1, size_t n);
@@ -52,11 +53,11 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			**ft_strsplit(const char *s, char c);
-int				ft_putchar(int c);
+ssize_t			ft_putchar(char c);
 ssize_t			ft_putstr(char const *s);
 ssize_t			ft_putendl(const char *s);
 ssize_t			ft_putnbr(int n);
-int				ft_putchar_fd(int c, int fd);
+ssize_t			ft_putchar_fd(char c, int fd);
 ssize_t			ft_putstr_fd(char const *s, int fd);
 ssize_t			ft_putendl_fd(const char *s, int fd);
 ssize_t			ft_putnbr_fd(int n, int fd);
