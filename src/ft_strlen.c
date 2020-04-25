@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 21:08:07 by vneelix           #+#    #+#             */
-/*   Updated: 2020/02/02 10:27:14 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/25 19:42:12 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0' && i != __SIZE_MAX__)
+	if (s == NULL)
+		return (0);
+	while (s[i] != '\0')
 		i += 1;
 	return (i);
 }
