@@ -36,7 +36,7 @@ static char	*read_file(int fd)
 	return (ret);
 }
 
-char		*get_file(char *name, int fd)
+char		*ft_getfile(char *name, int fd)
 {
 	int	new_fd;
 
