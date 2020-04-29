@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 02:14:45 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/29 03:10:39 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/29 03:51:02 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	*ft_delete(char **nptr)
 	return (NULL);
 }
 
-static char	**add_file(char **file, char *n_file)
+static char	**add_file(char **file, char *n_file, size_t *num_files)
 {
 	char			**ptr;
 	static size_t	count = 1;
@@ -45,12 +45,14 @@ static char	**add_file(char **file, char *n_file)
 	}
 	ptr = ft_memcpy(ptr, file, sizeof(char*) * (count - 1));
 	ptr[count - 1] = n_file;
+	if (num_files != NULL)
+		*num_files = count - 1;
 	count += 1;
 	ft_memdel(file);
 	return (ptr);
 }
 
-char		**ft_directory(char *name)
+char		**ft_directory(char *name, size_t *num_files)
 {
 	DIR				*dir;
 	char			**ret;
@@ -67,7 +69,7 @@ char		**ft_directory(char *name)
 	{
 		if ((entry->d_name)[0] == '.')
 			continue ;
-		if ((ret = add_file(ret, ft_strdup(entry->d_name))) == NULL)
+		if ((ret = add_file(ret, ft_strdup(entry->d_name), num_files)) == NULL)
 		{
 			closedir(dir);
 			return (NULL);
