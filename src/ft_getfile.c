@@ -6,13 +6,13 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 20:28:14 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/23 20:28:15 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/29 04:04:48 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_getfile(int fd)
+static char	*read_file(int fd)
 {
 	ssize_t	i;
 	char	*ret;
@@ -34,4 +34,15 @@ char	*ft_getfile(int fd)
 	if (i < 0)
 		return (NULL);
 	return (ret);
+}
+
+char		*get_file(char *name, int fd)
+{
+	int	new_fd;
+
+	new_fd = 0;
+	if (name != NULL)
+		if ((fd = open(name, O_RDONLY)) == -1)
+			return (NULL);
+	return (read_file(name != NULL ? new_fd : fd));
 }
