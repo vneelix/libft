@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 20:28:14 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/29 04:04:48 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/29 05:02:10 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ static char	*read_file(int fd)
 
 char		*ft_getfile(char *name, int fd)
 {
-	int	new_fd;
-
-	new_fd = 0;
 	if (name != NULL)
 		if ((fd = open(name, O_RDONLY)) == -1)
 			return (NULL);
-	return (read_file(name != NULL ? new_fd : fd));
+	return (read_file(fd));
 }

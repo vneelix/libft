@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 02:14:45 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/29 03:51:02 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/29 04:49:04 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	**add_file(char **file, char *n_file, size_t *num_files)
 	ptr = ft_memcpy(ptr, file, sizeof(char*) * (count - 1));
 	ptr[count - 1] = n_file;
 	if (num_files != NULL)
-		*num_files = count - 1;
+		*num_files = count;
 	count += 1;
 	ft_memdel(file);
 	return (ptr);
