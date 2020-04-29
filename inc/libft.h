@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 17:50:40 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/25 04:33:42 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/04/29 03:11:16 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <sys/types.h>
+# include <dirent.h>
 # define BUFF_SIZE 4096
 
 void			*ft_memset(void *s, int c, size_t n);
@@ -62,4 +64,5 @@ ssize_t			ft_putstr_fd(char const *s, int fd);
 ssize_t			ft_putendl_fd(const char *s, int fd);
 ssize_t			ft_putnbr_fd(int n, int fd);
 char			*ft_getfile(int fd);
+char			**ft_directory(char *name);
 #endif
