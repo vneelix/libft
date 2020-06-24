@@ -12,7 +12,7 @@ OBJ = $(SRC:$(SRC_P)%.c=$(OBJ_P)%.o)
 
 NAME = libft.a
 
-CC = clang
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -O2 -I$(INC_P) -c
 

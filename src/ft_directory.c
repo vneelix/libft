@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 02:14:45 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/29 04:49:04 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/06/07 16:30:21 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ char		**ft_directory(char *name, size_t *num_files)
 	if ((ret = (char**)ft_memalloc(sizeof(char*))) == NULL)
 		return (NULL);
 	if ((dir = opendir(name)) == NULL)
-	{
-		closedir(dir);
 		return (ft_delete(ret));
-	}
 	while ((entry = readdir(dir)) != NULL)
 	{
 		if ((entry->d_name)[0] == '.')
