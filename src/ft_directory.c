@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 02:14:45 by vneelix           #+#    #+#             */
-/*   Updated: 2020/06/24 19:12:01 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/06/30 12:19:17 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,14 @@ void	*ft_write(char **temp, DIR *dir, char *dir_name)
 {
 	size_t			i;
 	struct dirent	*entry;
-	char			*file_name;
 
 	i = 0;
 	while ((entry = readdir(dir)) != NULL)
 	{
 		if (entry->d_type != DT_REG)
 			continue ;
-		if ((file_name = ft_strjoin(dir_name, entry->d_name)) == NULL)
+		if ((temp[i] = ft_strjoin(dir_name, entry->d_name)) == NULL)
 			return (ft_delete(temp));
-		if ((temp[i] = realpath(file_name, NULL)) == NULL)
-		{
-			ft_memdel(file_name);
-			return (ft_delete(temp));
-		}
-		ft_memdel(file_name);
 		i += 1;
 	}
 	return (temp);
