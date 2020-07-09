@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 02:14:45 by vneelix           #+#    #+#             */
-/*   Updated: 2020/06/30 12:19:17 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/07/08 17:06:53 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ size_t	ft_count(char *name)
 	return (i);
 }
 
-void	*ft_write(char **temp, DIR *dir, char *dir_name)
+void	*ft_write(char **temp, DIR *dir)
 {
 	size_t			i;
 	struct dirent	*entry;
@@ -54,7 +54,7 @@ void	*ft_write(char **temp, DIR *dir, char *dir_name)
 	{
 		if (entry->d_type != DT_REG)
 			continue ;
-		if ((temp[i] = ft_strjoin(dir_name, entry->d_name)) == NULL)
+		if ((temp[i] = ft_strdup(entry->d_name)) == NULL)
 			return (ft_delete(temp));
 		i += 1;
 	}
@@ -79,7 +79,7 @@ char	**ft_directory(char *dir_name, size_t *num_files)
 		closedir(dir);
 		return (NULL);
 	}
-	ret = ft_write(ret, dir, dir_name);
+	ret = ft_write(ret, dir);
 	closedir(dir);
 	return (ret);
 }
