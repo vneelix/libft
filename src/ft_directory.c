@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 02:14:45 by vneelix           #+#    #+#             */
-/*   Updated: 2020/07/08 17:06:53 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/07/15 20:04:16 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	*ft_delete(char **nptr)
 	temp = nptr;
 	while (*nptr != NULL)
 	{
-		ft_memdel(*nptr);
+		ft_memdel((void**)nptr);
 		nptr += 1;
 	}
-	ft_memdel(temp);
+	ft_memdel((void**)&temp);
 	return (NULL);
 }
 

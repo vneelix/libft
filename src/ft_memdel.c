@@ -6,17 +6,17 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 21:02:10 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/29 04:58:38 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/07/15 20:02:24 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void *mem)
+void	ft_memdel(void **mem)
 {
 	if (mem != NULL)
 	{
-		free(mem);
-		mem = NULL;
+		free(*mem);
+		*mem = NULL;
 	}
 }
