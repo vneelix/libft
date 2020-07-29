@@ -6,13 +6,13 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 15:05:26 by vneelix           #+#    #+#             */
-/*   Updated: 2020/02/02 10:29:39 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/07/29 11:15:53 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**memory_alloc(const char *string, const char separator)
+static char	**memory_alloc(const char *string, const char separator)
 {
 	size_t	size;
 
@@ -27,7 +27,7 @@ char	**memory_alloc(const char *string, const char separator)
 	return (ft_memalloc(size));
 }
 
-char	**ft_strsplit(const char *string, const char separator)
+char		**ft_strsplit(const char *string, const char separator)
 {
 	size_t		i;
 	char		**ret;
@@ -45,7 +45,7 @@ char	**ft_strsplit(const char *string, const char separator)
 			string += 1;
 		if (temp != string)
 			if (!(ret[i++] = ft_strndup(temp, string - temp)))
-				return ft_nptr_del((void**)ret);
+				return (ft_nptr_del((void**)ret));
 		string += *string ? 1 : 0;
 	}
 	return (ret);
