@@ -14,9 +14,8 @@
 
 void	ft_memdel(void **mem)
 {
-	if (mem != NULL)
-	{
-		free(*mem);
-		*mem = NULL;
-	}
+	if (mem == NULL || *mem == NULL)
+		return ;
+	free(*mem);
+	*mem = NULL;
 }
