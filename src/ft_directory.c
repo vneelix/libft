@@ -21,7 +21,7 @@ void	*ft_delete(char **nptr)
 	temp = nptr;
 	while (*nptr != NULL)
 	{
-		ft_memdel((void**)nptr);
+		ft_memdel((void**)&nptr);
 		nptr += 1;
 	}
 	ft_memdel((void**)&temp);
