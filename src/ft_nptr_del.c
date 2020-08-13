@@ -14,17 +14,13 @@
 
 void	*ft_nptr_del(void **nptr)
 {
-	void *temp;
+	void	**temp;
 
 	if (!nptr)
 		return (NULL);
 	temp = nptr;
-	while (*nptr != NULL)
-	{
-		if (*nptr)
-			free(*nptr);
-		nptr += 1;
-	}
-	free(temp);
+	while (*temp)
+		ft_memdel(temp++);
+	ft_memdel((void**)&nptr);
 	return (NULL);
 }
