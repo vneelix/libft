@@ -54,7 +54,7 @@ int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_strjoin(char const *s1, char const *s2);
-char			**ft_strsplit(const char *s, char c);
+char			**ft_strsplit(const char *string, const char separator);
 ssize_t			ft_putchar(char c);
 ssize_t			ft_putstr(char const *s);
 ssize_t			ft_putendl(const char *s);
