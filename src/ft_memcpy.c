@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:01:04 by vneelix           #+#    #+#             */
-/*   Updated: 2020/04/25 19:41:16 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/08/24 13:26:44 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void	*ret;
-	size_t	border;
+	uint8_t		*uint8[2];
+	uint64_t	*uint64[2];
 
 	if (!dest || !src)
 		return (NULL);
-	ret = dest;
-	border = n / sizeof(int);
-	while (border)
+	uint64[0] = (uint64_t*)src;
+	uint64[1] = (uint64_t*)dest;
+	while (n / 8)
 	{
-		*(int*)dest = *(const int*)src;
-		dest += sizeof(int);
-		src += sizeof(int);
-		border -= 1;
+		*(uint64[1]++) = *(uint64[0]++);
+		n -= 8;
 	}
-	border = n % sizeof(int);
-	while (border)
+	uint8[0] = (uint8_t*)uint64[0];
+	uint8[1] = (uint8_t*)uint64[1];
+	while (n)
 	{
-		*(unsigned char*)dest++ = *(unsigned char*)src++;
-		border -= 1;
+		*(uint8[1]++) = *(uint8[0]++);
+		n -= 1;
 	}
-	return (ret);
+	return (dest);
 }

@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 21:17:54 by vneelix           #+#    #+#             */
-/*   Updated: 2020/08/19 19:06:08 by vneelix          ###   ########.fr       */
+/*   Created: 2020/08/24 12:38:33 by vneelix           #+#    #+#             */
+/*   Updated: 2020/08/24 12:43:36 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void	*ft_memdup(const void *mem, size_t size)
 {
-	if (!dst || !src)
+	void	*ret;
+
+	if (!mem || !size)
 		return (NULL);
-	return (ft_memcpy(dst, src, ft_strlen(src) + 1));
+	if (!(ret = malloc(size)))
+		return (NULL);
+	return (
+		ft_memcpy(ret, mem, size));
 }

@@ -6,7 +6,7 @@
 /*   By: vneelix <vneelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 17:50:40 by vneelix           #+#    #+#             */
-/*   Updated: 2020/07/15 20:02:46 by vneelix          ###   ########.fr       */
+/*   Updated: 2020/08/24 12:44:05 by vneelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *nptr, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memalloc(size_t n);
+void			*ft_memdup(const void *mem, size_t size);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
@@ -68,4 +69,5 @@ char			*ft_getfile(char *name, int fd);
 char			**ft_directory(char *name, size_t *num_files);
 int				ft_get_directory(char *directory,
 					void **dir, void **dir_file, size_t *count);
+int				ft_get_next_line(const int fd, char **line);
 #endif
