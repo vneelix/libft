@@ -26,8 +26,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*(uint64[1]++) = *(uint64[0]++);
 		n -= 8;
 	}
-	uint8[0] = ((uint8_t*)uint64)[0];
-	uint8[1] = ((uint8_t*)uint64)[1];
+	uint8[0] = (uint8_t*)uint64[0];
+	uint8[1] = (uint8_t*)uint64[1];
 	while (n)
 	{
 		*(uint8[1]++) = *(uint8[0]++);
