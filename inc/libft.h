@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdint.h>
 # include <sys/types.h>
 # include <dirent.h>
 # define BUFF_SIZE 4096
