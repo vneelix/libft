@@ -20,7 +20,7 @@ void	*ft_nptr_del(void **nptr)
 		return (NULL);
 	temp = nptr;
 	while (*temp)
-		ft_memdel(*temp++);
+		ft_memdel(temp++);
 	ft_memdel((void**)&nptr);
 	return (NULL);
 }
